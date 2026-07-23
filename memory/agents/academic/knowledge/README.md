@@ -1,0 +1,1 @@
+# Academic Output Agent Knowledge  Add stable knowledge for this agent here:  - SOPs - Templates - Examples - Review rubrics - Useful links or source document references  Keep this folder human-readable. Move to vector retrieval only after the knowledge base grows large enough to justify it.

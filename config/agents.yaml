@@ -1,0 +1,71 @@
+agents:
+  - key: coordinator
+    name: Coordinator Agent
+    mission: Route work, resolve conflicts, and keep cross-department progress visible.
+    responsibilities:
+      - Break ambiguous requests into work items.
+      - Assign work items to department agents.
+      - Request human confirmation before external write actions.
+    keywords: [统筹, 协调, 分工, 复盘, 进度, 任务]
+    default_collaborators: []
+    draft_fields: [summary, description, role_key, confidence, review_status]
+  - key: education
+    name: Education Agent
+    mission: Support AI/STEM course design, training, trial teaching, and teaching material delivery.
+    responsibilities:
+      - Draft lesson plans, slides, and teaching scripts.
+      - Track teacher and assistant training readiness.
+      - Summarize equipment and classroom requirements.
+    keywords: [课程, 课件, 教案, 试讲, 主讲, 助教, 教学, 设备, 培训]
+    default_collaborators: [operations, outreach]
+    draft_fields: [teaching_materials, trial_teaching_plan, equipment_needs, acceptance_criteria]
+  - key: operations
+    name: Operations Agent
+    mission: Keep routine operations, meeting follow-ups, and practice-team execution on track.
+    responsibilities:
+      - Extract action items from documents and meetings.
+      - Track owners, deadlines, and blockers.
+      - Prepare progress summaries for weekly reviews.
+    keywords: [运营, 会议, 日程, 实践队, 行前, 行中, 行后, 留痕, 机制]
+    default_collaborators: [education, pr]
+    draft_fields: [owner_hint, timeline, progress_tracking, dependencies]
+  - key: outreach
+    name: Outreach Agent
+    mission: Manage partner discovery, relationship follow-up, and cooperation handoff.
+    responsibilities:
+      - Prepare outreach scripts and partner profiles.
+      - Track schools, enterprises, institutions, and NGOs.
+      - Hand partner requirements to education and operations agents.
+    keywords: [外联, 合作, 学校, 幼儿园, 企业, 公益组织, 渠道, 转化]
+    default_collaborators: [education, operations]
+    draft_fields: [partner, contact_action, handoff_target, follow_up_plan]
+  - key: pr
+    name: PR Agent
+    mission: Coordinate brand content, media assets, publishing plans, and public reports.
+    responsibilities:
+      - Collect photos, videos, scripts, and captions.
+      - Draft posts, posters, reports, and video outlines.
+      - Track publishing status across channels.
+    keywords: [推文, 视频, 海报, 公众号, 小红书, 素材, 纪录片, vlog, 品牌, 宣传]
+    default_collaborators: [operations, outreach]
+    draft_fields: [content_type, materials_needed, channel, acceptance_criteria]
+  - key: academic
+    name: Academic Output Agent
+    mission: Support papers, software copyrights, patents, research plans, and innovation projects.
+    responsibilities:
+      - Organize literature review tasks.
+      - Track software copyright and patent materials.
+      - Prepare research and competition evidence packs.
+    keywords: [论文, 专利, 软著, 大创, 大挑, 文献, 调研, 学术]
+    default_collaborators: [competition]
+    draft_fields: [research_output, evidence_needed, method_plan, acceptance_criteria]
+  - key: competition
+    name: Competition Planning Agent
+    mission: Discover competitions, match projects, form teams, and preserve competition knowledge.
+    responsibilities:
+      - Maintain competition pools and deadlines.
+      - Match projects with suitable competitions.
+      - Create preparation plans and post-competition reviews.
+    keywords: [竞赛, 比赛, 创青春, 商赛, 计设, 组队, 备赛, 报名]
+    default_collaborators: [academic, pr]
+    draft_fields: [competition_name, deadline, team_roles, materials_needed, review_plan]
