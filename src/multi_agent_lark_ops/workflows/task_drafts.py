@@ -60,6 +60,30 @@ def render_task_drafts_markdown(task_drafts: Iterable[TaskDraft]) -> str:
                 draft.description,
             ]
         )
+        if draft.enhanced:
+            lines.extend(
+                [
+                    "",
+                    "### Enhanced Fields",
+                    "",
+                    f"- Enhanced by: `{draft.enhanced_by or 'unknown'}`",
+                ]
+            )
+            if draft.suggested_owner:
+                lines.append(f"- Suggested owner: {draft.suggested_owner}")
+            if draft.collaborators:
+                lines.append("- Collaborators: " + ", ".join(f"`{c}`" for c in draft.collaborators))
+            if draft.acceptance_criteria:
+                lines.append("- Acceptance criteria:")
+                for item in draft.acceptance_criteria:
+                    lines.append(f"  - {item}")
+            if draft.dependencies:
+                lines.append("- Dependencies: " + ", ".join(f"`{d}`" for d in draft.dependencies))
+            if draft.risk_notes:
+                lines.append("- Risk notes:")
+                for note in draft.risk_notes:
+                    lines.append(f"  - {note}")
+
         if draft.assignee_open_id:
             lines.append(f"- Assignee: `{draft.assignee_open_id}`")
         if draft.due:

@@ -33,6 +33,13 @@ class TaskDraft:
     due: str | None = None
     tasklist_id: str | None = None
     review_status: str = "needs_human_review"
+    suggested_owner: str = ""
+    collaborators: tuple[str, ...] = ()
+    acceptance_criteria: tuple[str, ...] = ()
+    dependencies: tuple[str, ...] = ()
+    risk_notes: tuple[str, ...] = ()
+    enhanced: bool = False
+    enhanced_by: str | None = None
 
 
 @dataclass
