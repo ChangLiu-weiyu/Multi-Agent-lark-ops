@@ -1,5 +1,7 @@
 # Multi-Agent Lark Ops
 
+[中文说明](README.zh-CN.md)
+
 Multi-Agent Lark Ops is a configurable multi-agent workflow system for Lark/Feishu team operations.
 
 It reads Lark documents, extracts actionable work items, routes them to role agents, enriches the drafts with department-specific context, exports human-reviewable task bundles, writes approved tasks to Lark behind an explicit confirmation gate, and records outcomes into each department agent's memory.
@@ -172,3 +174,5 @@ The current codebase is covered by unit tests and was last verified with 46 pass
 
 1. Add richer writeback targets such as messages and follow-up notes.
 2. Add explicit notification / handoff flows around confirmed writeback.
+
+
